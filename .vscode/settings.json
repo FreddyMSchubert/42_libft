@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"algorithm": "c",
+		"stddef.h": "c"
+	}
+}

@@ -6,15 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:58:11 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/05 13:22:46 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/08 10:46:40 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	ft_toupper(char letter)
 {
 	if (letter <= 'z' && letter >= 'a')
-	{
 		letter -= 32;
-	}
 	return (letter);
 }

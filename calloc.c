@@ -1,18 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tolower.c                                          :+:      :+:    :+:   */
+/*   calloc.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 12:12:13 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/08 10:46:24 by fschuber         ###   ########.fr       */
+/*   Created: 2023/10/08 11:51:03 by fschuber          #+#    #+#             */
+/*   Updated: 2023/10/08 11:55:17 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char letter)
-{
-	if (letter <= 'Z' && letter >= 'A')
-		letter += 32;
-	return (letter);
-}
+// https://www.youtube.com/watch?v=xDVC3wKjS64
