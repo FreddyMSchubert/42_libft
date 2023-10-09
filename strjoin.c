@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   strjoin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/09 07:14:26 by fschuber         ###   ########.fr       */
+/*   Created: 2023/10/09 07:24:47 by fschuber          #+#    #+#             */
+/*   Updated: 2023/10/09 07:29:42 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#include "libft.h"
 
-# define LIBFT_H
-#define NULL ((void*)0)
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t		s1size;
+	size_t		s2size;
+	char		*p;
 
-#include <stddef.h>
-
-int		ft_strlen(const char *s);
-int		ft_isdigit(int c);
-void	*ft_memset(void *b, int c, size_t len);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
-
-#endif
+	s1size = ft_strlen(s1);
+	s2size = ft_strlen(s2);
+	p = (char *)malloc(s1size + s2size + 1);
+	if (p == NULL)
+		return (NULL);
+	ft_memcpy(&p[0], s1, s1size);
+	ft_memcpy(&p[s1size], s2, s2size);
+	p[s1size + s2size] = '\0';
+	return (p);
+}

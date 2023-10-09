@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 09:35:26 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/08 10:22:46 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/09 07:10:24 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 // #include <stdio.h>
 // #include <string.h>
+
+// is this correct? no null terminator handling...
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
