@@ -6,14 +6,14 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:02:10 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/09 10:25:17 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/10 10:41:16 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #include <stdio.h>
-#include <string.h>
+// #include <string.h>
 #include <stdlib.h>
 
 int	num_length(int num)
@@ -40,7 +40,16 @@ int	num_length(int num)
 	return (i);
 }
 
-// still gotta handle int min and 0
+char	*create_string(int length)
+{
+	char	*char_numb;
+
+	char_numb = (char *)malloc(length + 1);
+	if (char_numb == NULL)
+		return (NULL);
+	char_numb[length] = '\0';
+	return (char_numb);
+}
 
 char	*ft_itoa(int numb)
 {
@@ -48,18 +57,16 @@ char	*ft_itoa(int numb)
 	char	*char_numb;
 	int		negative;
 
+	if (numb == -2147483648)
+		return (ft_strdup("-2147483648"));
 	length = num_length(numb);
-	char_numb = (char *)malloc(length + 1);
-	char_numb[length] = '\0';
+	char_numb = create_string(length);
+	negative = 0;
 	if (numb < 0)
 	{
 		negative = 1;
 		numb = -numb;
 	}
-	if (char_numb == NULL)
-		return (NULL);
-	if (numb == -2147483648)
-		return (ft_strdup("-2147483648"));
 	while (length > 0)
 	{
 		char_numb[length - 1] = numb % 10 + 48;
@@ -106,7 +113,7 @@ void test_ft_itoa() {
     }
 }
 
-int main() {
-    test_ft_itoa();
-    return 0;
-}
+// int main() {
+//     test_ft_itoa();
+//     return 0;
+// }

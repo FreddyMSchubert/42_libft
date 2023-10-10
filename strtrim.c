@@ -5,16 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 07:48:48 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/09 09:01:01 by fschuber         ###   ########.fr       */
+/*   Created: 2023/10/10 08:15:30 by fschuber          #+#    #+#             */
+/*   Updated: 2023/10/10 08:45:21 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+	go to front, go to back with seperate variables
+	select the section that is supposed to be kept
+	endselector - startselector gives the length, allocate it
+	then just copy over with a loop starting at startselector
+*/
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include "libft.h"
 
 int	char_contained_in_set(char const *set, char c)
 {
@@ -32,29 +37,19 @@ int	char_contained_in_set(char const *set, char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		s1len;
-	int		beg_counter;
-	int		end_counter;
+	int		beg;
+	int		end;
 	char	*p;
 
-	s1len = ft_strlen(s1);
-	beg_counter = 0;
-	end_counter = s1len - 1;
-	if (s1 == NULL)
+	if (!s1 || !set)
 		return (NULL);
-	while (beg_counter < s1len && char_contained_in_set(set, s1[beg_counter]))
-		beg_counter++;
-	while (end_counter >= 0 && char_contained_in_set(set, s1[end_counter]))
-		end_counter--;
-	if (beg_counter > end_counter)
-	{
-		p = malloc(1);
-		if (p == NULL)
-			return (NULL);
-		p[0] = '\0';
-		return (p);
-	}
-	p = ft_substr(s1, beg_counter, end_counter - beg_counter + 1);
+	beg = 0;
+	end = ft_strlen(s1) - 1;
+	while (char_contained_in_set(set, s1[beg]))
+		beg++;
+	while (char_contained_in_set(set, s1[end]) && end >= beg)
+		end--;
+	p = ft_substr(s1, beg, end - beg + 1);
 	return (p);
 }
 
@@ -77,7 +72,7 @@ void test_ft_strtrim() {
     for (int i = 0; tests[i].input != NULL || tests[i].expected != NULL; i++) {
         char *trimmed_crafted = ft_strtrim(tests[i].input, tests[i].set);
         
-        printf("Trial %d:\n", i);
+        printf("\nTrial %d:\n", i);
         printf("Crafted Trim: '%s'\n", trimmed_crafted ? trimmed_crafted : "(null)");
         printf("Expected Tale: '%s'\n", tests[i].expected);
         

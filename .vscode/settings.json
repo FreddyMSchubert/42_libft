@@ -6,6 +6,8 @@
 		"bitset": "c",
 		"chrono": "c",
 		"unordered_map": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"unistd.h": "c",
+		"stdio.h": "c"
 	}
 }
