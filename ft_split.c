@@ -6,16 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:51:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:18:03 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 int	count_sections_without_delimiters(char const *s, char del)
 {
@@ -86,60 +81,4 @@ char	**ft_split(char const *s, char del)
 		l_s_i = sel_i;
 	}
 	return (a);
-}
-
-void print_array(char **array) {
-    if (array == NULL) {
-        printf("(null)\n");
-        return;
-    }
-    for (int i = 0; array[i] != NULL; i++) {
-        printf("'%s'", array[i]);
-        if (array[i + 1] != NULL)
-            printf(", ");
-    }
-    printf("\n");
-}
-
-void free_array(char **array) {
-    for (int i = 0; array[i] != NULL; i++)
-        free(array[i]);
-    free(array);
-}
-
-void test_ft_split() {
-    struct {
-        char const *input;
-        char delimiter;
-        char *expected[10];  // Adjust the size as needed.
-    } tests[] = {
-        {"The Grand Saga of Code", ' ', {"The", "Grand", "Saga", "of", "Code", NULL}},
-        {"abacaba", 'a', {"b", "c", "b", NULL}},
-        {"", ' ', {NULL}},
-        {"NoDelimitersHere!", '!', {"NoDelimitersHere!", NULL}},
-        {"!Exclaim!", '!', {"", "Exclaim", "", NULL}},
-        {"Dance!!Dance!!", '!', {"Dance", "", "Dance", "", NULL}},
-        {"EdgeCase", 'E', {"", "dgeCase", NULL}},
-        {"EdgeCase", 'e', {"Edg", "Cas", NULL}},
-        {"!!!!", '!', {"", "", "", "", NULL}},
-        {"a!a!a", '!', {"a", "a", "a", NULL}},
-        {NULL, ' ', {NULL}}  // The sentinel to mark the end of tests.
-    };
-    
-    for (int i = 0; tests[i].input != NULL; i++) {
-        char **split_tales = ft_split(tests[i].input, tests[i].delimiter);
-        
-        printf("Trial %d:\n\n\n", i);
-        printf("Split Tales: ");
-        print_array(split_tales);
-        printf("Expected Tales: ");
-        print_array(tests[i].expected);
-        
-        free_array(split_tales);  // Release the split tales back to the memory realms.
-    }
-}
-
-int main() {
-    test_ft_split();
-    return 0;
 }

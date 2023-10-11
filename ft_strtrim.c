@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:15:30 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:52:08 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:21:42 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 	then just copy over with a loop starting at startselector
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 int	char_contained_in_set(char const *set, char c)
@@ -51,36 +49,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	p = ft_substr(s1, beg, end - beg + 1);
 	return (p);
-}
-
-void test_ft_strtrim() {
-    struct {
-        char const *input;
-        char const *set;
-        char const *expected;
-    } tests[] = {
-        {"    The Grand Saga of Code    ", " ", "The Grand Saga of Code"},
-        {"abacaba The Grand Saga of Code bacabaca", "abc ", "The Grand Saga of Code"},
-        {"NoTrimmingHere!", "!", "NoTrimmingHere"},
-        {"", " ", ""},  // An empty string.
-        {"   ", " ", ""},  // A string of only spaces.
-        {"!!!!!", "!", ""},  // A string of only trimmable characters.
-        {NULL, " ", ""},  // An empty tale, yet a realm of trimmable characters.
-        {NULL, NULL, NULL}  // The sentinel to mark the end of tests.
-    };
-    
-    for (int i = 0; tests[i].input != NULL || tests[i].expected != NULL; i++) {
-        char *trimmed_crafted = ft_strtrim(tests[i].input, tests[i].set);
-        
-        printf("\nTrial %d:\n", i);
-        printf("Crafted Trim: '%s'\n", trimmed_crafted ? trimmed_crafted : "(null)");
-        printf("Expected Tale: '%s'\n", tests[i].expected);
-        
-        free(trimmed_crafted);  // Release the crafted trimmed string back to the memory realms.
-    }
-}
-
-int main() {
-    test_ft_strtrim();
-    return 0;
 }

@@ -6,15 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:02:10 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:51:26 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:10:18 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
-// #include <string.h>
-#include <stdlib.h>
 
 int	num_length(int num)
 {
@@ -77,43 +73,3 @@ char	*ft_itoa(int numb)
 		char_numb[0] = '-';
 	return (char_numb);
 }
-
-
-void test_ft_itoa() {
-    struct {
-        int input;
-        char const *expected;
-    } tests[] = {
-        {42, "42"},
-        {-42, "-42"},
-        {0, "0"},
-        {2147483647, "2147483647"},  // The grand tale of INT_MAX.
-        {-2147483648, "-2147483648"},  // The grand tale of INT_MIN.
-        {1000000000, "1000000000"},
-        {-1000000000, "-1000000000"},
-        {999999999, "999999999"},
-        {-999999999, "-999999999"},
-        {1, "1"},
-        {-1, "-1"},
-        {10, "10"},
-        {-10, "-10"},
-        {123456789, "123456789"},
-        {-123456789, "-123456789"},
-        {-1, NULL}  // The sentinel to mark the end of tests.
-    };
-    
-    for (int i = 0; tests[i].expected != NULL; i++) {
-        char *carved_tale = ft_itoa(tests[i].input);
-        
-        printf("Trial %d:\n", i);
-        printf("Carved Tale: '%s'\n", carved_tale ? carved_tale : "(null)");
-        printf("Expected Tale: '%s'\n", tests[i].expected);
-        
-        free(carved_tale);  // Release the carved tale back to the memory realms.
-    }
-}
-
-// int main() {
-//     test_ft_itoa();
-//     return 0;
-// }

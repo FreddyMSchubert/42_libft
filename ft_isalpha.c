@@ -6,11 +6,9 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:04:32 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:51:19 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:09:46 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// isalpha accounts for values outside of ascii range => first condition
 
 int	ft_isalpha(int c)
 {

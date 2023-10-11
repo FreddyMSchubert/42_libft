@@ -6,13 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:46:35 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:52:06 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:21:23 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -28,24 +26,4 @@ char	*ft_strrchr(const char *s, int c)
 		counter--;
 	}
 	return (NULL);
-}
-
-void test_strrchr(const char *s, int c) {
-    char *result1 = ft_strrchr(s, c);
-    char *result2 = strrchr(s, c);
-    
-    printf("Testing string: \"%s\", character: '%c' (%d)\n", s, c, c);
-    printf("ft_strrchr result: %s\n", result1 ? result1 : "NULL");
-    printf("strrchr result: %s\n", result2 ? result2 : "NULL");
-    printf("\n");  // Print a blank line between tests
-}
-
-int main(void) {
-    test_strrchr("hello world", 'l');
-    test_strrchr("hello world", 'o');
-    test_strrchr("hello world", 'h');
-    test_strrchr("hello world", 'd');
-    test_strrchr("hello world", 'z');
-    
-    return 0;
 }
