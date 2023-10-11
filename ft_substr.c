@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 07:11:20 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:23:37 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:18:30 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*p;
 
+	if (ft_strlen(s) < start)
+		return (NULL);
 	p = (char *)malloc(len + 1);
 	if (p == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:16:41 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:30:57 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstbuff);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 
 // OUTPUT TO FILE
 void	ft_putstr_fd(char *s, int fd);

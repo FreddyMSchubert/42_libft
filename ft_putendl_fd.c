@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 09:32:41 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:17:14 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:51:42 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putendl_fd(char *s, int fd)
 	char	newline;
 
 	counter = 0;
-	newline = '\0';
+	newline = '\n';
 	while (s[counter])
 	{
 		write(fd, &s[counter], 1);

@@ -6,13 +6,22 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 08:47:50 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:22:08 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:12:28 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_isspace(const char s)
+{
+	if (s == ' ' || s == '\t' || s == '\n' || s == '\v')
+		return (1);
+	if (s == '\f' || s == '\r')
+		return (1);
+	return (0);
+}
+
+int	ft_atoi(const char *s)
 {
 	int		i;
 	int		sign;
@@ -21,14 +30,23 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	value = 0;
-	while (str[i] == ' ')
+	while (ft_isspace(s[i]))
 		i++;
-	while (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
+	if (!ft_isdigit(s[i]))
 	{
-		if (str[i] == '-')
+		if (s[i] == '-')
 			sign = -sign;
-		if (ft_isdigit(str[i]))
-			value = (value * 10) + str[i] - 48;
+		if (s[i] == '-' || s[i] == '+')
+			i++;
+		else
+			return (0);
+	}
+	if (!ft_isdigit(s[i]))
+		return (0);
+	while (ft_isdigit(s[i]))
+	{
+		if (ft_isdigit(s[i]))
+			value = (value * 10) + s[i] - 48;
 		i++;
 	}
 	return (value * sign);

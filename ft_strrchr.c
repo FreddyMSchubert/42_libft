@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:46:35 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:21:23 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:25:17 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int		counter;
 
-	counter = ft_strlen(s) - 1;
+	counter = ft_strlen(s);
 	while (counter >= 0)
 	{
-		if (s[counter] == c)
+		if (s[counter] == (char)c)
 		{
 			return ((char *) &s[counter]);
 		}

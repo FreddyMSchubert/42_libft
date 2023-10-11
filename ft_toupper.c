@@ -6,11 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:58:11 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/10 10:52:13 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:20:39 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char letter)
+int	ft_toupper(int letter)
 {
 	if (letter <= 'z' && letter >= 'a')
 		letter -= 32;

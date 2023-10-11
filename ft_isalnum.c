@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:17:59 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:09:53 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:35:33 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int	ft_isalnum(char c)
 
 	is_number = (c >= '0' && c <= '9');
 	is_alpha = ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
-	return (is_number && is_alpha);
+	return (is_number || is_alpha);
 }

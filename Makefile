@@ -6,7 +6,7 @@
 #    By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 10:17:52 by fschuber          #+#    #+#              #
-#    Updated: 2023/10/11 10:17:54 by fschuber         ###   ########.fr        #
+#    Updated: 2023/10/11 15:29:33 by fschuber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,3 +37,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+all: $(NAME)
