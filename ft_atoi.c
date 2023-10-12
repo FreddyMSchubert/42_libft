@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 08:47:50 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 17:12:28 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 06:01:52 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int	ft_atoi(const char *s)
 		else
 			return (0);
 	}
-	if (!ft_isdigit(s[i]))
-		return (0);
 	while (ft_isdigit(s[i]))
 	{
 		if (ft_isdigit(s[i]))

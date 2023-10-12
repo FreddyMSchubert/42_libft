@@ -6,23 +6,23 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:23:01 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 15:36:48 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 06:28:27 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-	SCENARIO 1: Beginning of DST is free (default case when not overlapping)
+	SCENARIO 1: Beginning of DST is free (default case when not overlapping) (=> copy_forward)
 		-> Copy from beginning
-	SCENARIO 2: Beginnign of DST is filled
+	SCENARIO 2: Beginnign of DST is filled (=> copy_backwards)
 		-> Copy from end
 	SCENARIO 3: Full Overlap
 		-> just return DST
 	checked in reverse order
 */
 
-void	*scenario1(char *dst, const char *src, size_t len)
+void	*copy_forward(char *dst, const char *src, size_t len)
 {
 	size_t		counter;
 
@@ -35,12 +35,12 @@ void	*scenario1(char *dst, const char *src, size_t len)
 	return (dst);
 }
 
-void	*scenario2(char *dst, const char *src, size_t len)
+void	*copy_backward(char *dst, const char *src, size_t len)
 {
-	size_t		counter;
+	int		counter;
 
 	counter = len - 1;
-	while (counter > 0)
+	while (counter >= 0)
 	{
 		dst[counter] = src[counter];
 		counter--;
@@ -52,14 +52,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*char_dst;
 	char	*char_src;
+	int		ptr_sub;
 
 	char_dst = (char *)dst;
 	char_src = (char *)src;
-	if (char_dst == char_src)
+	ptr_sub = char_dst - char_src;
+	if (ptr_sub == 0)
 		return (dst);
-	if (char_dst < char_src && char_src < char_dst + len)
-		return (scenario2(char_dst, char_src, len));
-	else if (char_src < char_dst && char_dst < char_src + len)
-		return (scenario1(char_dst, char_src, len));
-	return (dst);
+	if (ptr_sub > 0 && ptr_sub < (int)len)
+		return (copy_backward(char_dst, char_src, len));
+	return (copy_forward(char_dst, char_src, len));
 }
