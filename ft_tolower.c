@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:12:13 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 16:20:46 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 09:57:15 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int letter)
 {
 	if (letter <= 'Z' && letter >= 'A')
-		letter += 32;
+		return (letter + 32);
 	return (letter);
 }

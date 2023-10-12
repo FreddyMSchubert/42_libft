@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 09:35:26 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:22:51 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 08:49:30 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*char_dst;
 	size_t		counter;
 
+	if (!src && !dst)
+		return (NULL);
 	char_src = (char *)src;
 	char_dst = (char *)dst;
 	counter = 0;

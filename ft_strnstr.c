@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:37:01 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 16:44:27 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 08:02:20 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	match_start = 0;
 	counter = 0;
-	while (counter < len)
+	while (counter < len && haystack[counter])
 	{
 		if (haystack[counter] == needle[match_start])
 		{
@@ -34,6 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		else
 		{
+			counter = counter - match_start;
 			match_start = 0;
 		}
 		counter++;

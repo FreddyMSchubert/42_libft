@@ -6,17 +6,17 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:23:01 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 06:28:27 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 07:12:42 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-	SCENARIO 1: Beginning of DST is free (default case when not overlapping) (=> copy_forward)
-		-> Copy from beginning
-	SCENARIO 2: Beginnign of DST is filled (=> copy_backwards)
-		-> Copy from end
+	SCENARIO 1: Beginning of DST is free (default case when not overlapping)
+		-> Copy from beginning (=> copy_forward)
+	SCENARIO 2: Beginnign of DST is filled
+		-> Copy from end (=> copy_backwards)
 	SCENARIO 3: Full Overlap
 		-> just return DST
 	checked in reverse order

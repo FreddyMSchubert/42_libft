@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:15:30 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:21:42 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 09:58:28 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
+	if (set[0] == '\0' || s1[0] == '\0')
+	{
+		p = ft_substr(s1, 0, ft_strlen(s1));
+		return (p);
+	}
 	beg = 0;
 	end = ft_strlen(s1) - 1;
 	while (char_contained_in_set(set, s1[beg]))

@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:58:11 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 16:20:39 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 09:57:19 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int letter)
+int	ft_toupper(int c)
 {
-	if (letter <= 'z' && letter >= 'a')
-		letter -= 32;
-	return (letter);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

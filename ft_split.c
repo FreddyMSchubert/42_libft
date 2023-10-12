@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 07:09:00 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 07:11:38 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,42 +82,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (a);
 }
-
-// #include <stdio.h>
-// #include <stdbool.h>
-
-// // ... Your count_sections_without_delimiters function here ...
-
-// typedef struct {
-//     char const *str;
-//     char delimiter;
-//     int expected_result;
-// } test_case;
-
-// int main() {
-//     test_case tests[] = {
-//         {"hello world", ' ', 2},
-//         {"  leading spaces", ' ', 2},
-//         {"trailing spaces  ", ' ', 2},
-// 		{"          ", ' ', 0},
-// 		{"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ', 12},
-// 		{"   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ', 12},
-// 		{"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i', 25},
-// 		{"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z', 1},
-//         {"", 'z', 0}
-//     };
-    
-//     int num_tests = sizeof(tests) / sizeof(test_case);
-    
-//     for (int i = 0; i < num_tests; i++) {
-//         int result = count_sections_without_delimiters(tests[i].str, tests[i].delimiter);
-//         bool is_correct = result == tests[i].expected_result;
-        
-//         // ANSI escape codes to set text color: green for correct, red for incorrect
-//         const char *color_code = is_correct ? "\033[32m" : "\033[31m";
-        
-//         printf("%sTest %d: Expected %d, Got %d\033[0m\n", color_code, i + 1, tests[i].expected_result, result);
-//     }
-    
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:02:10 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/11 11:10:18 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/12 09:09:10 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,16 @@
 
 int	num_length(int num)
 {
-	int			i;
-	int			negative;
+	int	i;
 
 	i = 0;
-	negative = 0;
-	if (num < 0)
-	{
-		negative = 1;
-		num = -num;
-	}
-	if (num == 0)
-		return (1);
-	while (num > 0)
+	if (num <= 0)
+		i = 1;
+	while (num != 0)
 	{
 		num /= 10;
-		i ++;
+		i++;
 	}
-	if (negative == 1)
-		return (i + 1);
 	return (i);
 }
 
@@ -73,3 +64,11 @@ char	*ft_itoa(int numb)
 		char_numb[0] = '-';
 	return (char_numb);
 }
+
+// #include <stdio.h>
+
+// int	main()
+// {
+// 	printf("%s", ft_itoa(-1234));
+// 	return (1);
+// }
