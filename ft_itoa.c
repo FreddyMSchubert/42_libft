@@ -6,69 +6,47 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 09:02:10 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 09:09:10 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:43:01 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_length(int num)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	if (num <= 0)
-		i = 1;
-	while (num != 0)
-	{
-		num /= 10;
-		i++;
-	}
-	return (i);
+static int	num_length(int num)
+{
+	if (num < 0)
+		return (1 + num_length(-num));
+	if (num < 10)
+		return (1);
+	return (1 + num_length(num / 10));
 }
 
-char	*create_string(int length)
+static void	itoa_loop(int num, char *str, int index)
 {
-	char	*char_numb;
-
-	char_numb = (char *)malloc(length + 1);
-	if (char_numb == NULL)
-		return (NULL);
-	char_numb[length] = '\0';
-	return (char_numb);
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	if (num >= 10)
+		itoa_loop(num / 10, str, index - 1);
+	str[index] = (num % 10) + '0';
 }
 
 char	*ft_itoa(int numb)
 {
 	size_t	length;
 	char	*char_numb;
-	int		negative;
 
 	if (numb == -2147483648)
 		return (ft_strdup("-2147483648"));
 	length = num_length(numb);
-	char_numb = create_string(length);
-	negative = 0;
-	if (numb < 0)
-	{
-		negative = 1;
-		numb = -numb;
-	}
-	while (length > 0)
-	{
-		char_numb[length - 1] = numb % 10 + 48;
-		numb /= 10;
-		length--;
-	}
-	if (negative == 1)
-		char_numb[0] = '-';
+	char_numb = (char *)malloc(length + 1);
+	if (char_numb == NULL)
+		return (NULL);
+	char_numb[length] = '\0';
+	itoa_loop(numb, char_numb, length - 1);
 	return (char_numb);
 }
-
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	printf("%s", ft_itoa(-1234));
-// 	return (1);
-// }

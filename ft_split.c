@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/13 08:57:32 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:49:43 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	count_sections_without_delimiters(char const *s, char del)
 	return (sections_without_delimiters);
 }
 
-char	**create_array(int sections)
+static char	**create_array(int sections)
 {
 	char	**a;
 

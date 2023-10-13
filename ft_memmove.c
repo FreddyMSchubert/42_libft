@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 10:23:01 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 07:12:42 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:49:28 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 	checked in reverse order
 */
 
-void	*copy_forward(char *dst, const char *src, size_t len)
+static void	*copy_forward(char *dst, const char *src, size_t len)
 {
 	size_t		counter;
 
@@ -35,7 +35,7 @@ void	*copy_forward(char *dst, const char *src, size_t len)
 	return (dst);
 }
 
-void	*copy_backward(char *dst, const char *src, size_t len)
+static void	*copy_backward(char *dst, const char *src, size_t len)
 {
 	int		counter;
 

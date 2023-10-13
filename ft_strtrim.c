@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 08:15:30 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 09:58:28 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:50:43 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "libft.h"
 
-int	char_contained_in_set(char const *set, char c)
+static int	char_contained_in_set(char const *set, char c)
 {
 	int		i;
 

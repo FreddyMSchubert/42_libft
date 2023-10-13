@@ -6,13 +6,13 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 08:47:50 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 06:01:52 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:47:27 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(const char s)
+static int	ft_isspace(const char s)
 {
 	if (s == ' ' || s == '\t' || s == '\n' || s == '\v')
 		return (1);

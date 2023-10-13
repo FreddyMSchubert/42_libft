@@ -6,12 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:37:01 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 08:02:20 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:50:26 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -41,9 +40,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// int	main()
-// {
-// 	printf("%s", ft_strnstr("lorem ipsum dolor sit amet", "", 10));
-// 	return 1;
-// }
