@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/12 07:11:38 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 08:46:42 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	**ft_split(char const *s, char c)
 	int			sel_i;
 	int			c_a_i;
 
+	if (!s)	return (0);
 	a = malloc((count_sections_without_delimiters(s, c) + 1) * sizeof(char *));
 	if (a == NULL)
 		return (NULL);
