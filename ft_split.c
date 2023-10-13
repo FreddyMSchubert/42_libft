@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/13 08:46:42 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 08:57:32 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ static int	count_sections_without_delimiters(char const *s, char del)
 	return (sections_without_delimiters);
 }
 
+char	**create_array(int sections)
+{
+	char	**a;
+
+	a = malloc((sections + 1) * sizeof(char *));
+	if (a == NULL)
+		return (NULL);
+	a[sections] = NULL;
+	return (a);
+}
+
 /*
 INPUT
 	s     = string to be cut up into substrings
@@ -62,11 +73,11 @@ char	**ft_split(char const *s, char c)
 	int			sel_i;
 	int			c_a_i;
 
-	if (!s)	return (0);
-	a = malloc((count_sections_without_delimiters(s, c) + 1) * sizeof(char *));
-	if (a == NULL)
+	if (!s)
+		return (0);
+	a = create_array(count_sections_without_delimiters(s, c));
+	if (!a)
 		return (NULL);
-	a[count_sections_without_delimiters(s, c)] = NULL;
 	l_s_i = 0;
 	sel_i = 0;
 	c_a_i = 0;

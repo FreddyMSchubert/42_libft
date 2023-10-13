@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 07:38:39 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/13 07:56:23 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/13 09:21:49 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,5 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	del(lst->content);
+	free(lst);
 }

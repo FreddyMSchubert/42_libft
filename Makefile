@@ -6,7 +6,7 @@
 #    By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 10:17:52 by fschuber          #+#    #+#              #
-#    Updated: 2023/10/13 08:36:25 by fschuber         ###   ########.fr        #
+#    Updated: 2023/10/13 09:09:51 by fschuber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c 
 BONUS_SRCS	=	ft_lstadd_back.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c \
 				ft_lstadd_front.c ft_lstnew.c ft_lstsize.c \
 
+DEPS 		=	libft.h
+
 OBJS = $(SRCS:.c=.o)					# SRCS -> OBJS NAMING SCHEME
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
@@ -32,9 +34,9 @@ CFLAGS = -Wall -Wextra -Werror -I.		# FLAGS
 $(NAME): $(OBJS)						# LIB CREATION DEPENDS ON OBJS
 	ar rcs $(NAME) $(OBJS)
 $(BONUS_NAME): $(BONUS_OBJS)
-	ar rcs $(BONUS_NAME) $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
-%.o: %.c								# FOR EVERY OBJ THERES A SRC FILE
+%.o: %.c $(DEPS)						# FOR EVERY OBJ THERES A SRC FILE
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
