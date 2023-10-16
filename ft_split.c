@@ -6,24 +6,11 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 06:17:07 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/13 11:49:43 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/16 07:21:14 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*
-	first we make a function to caluclate the amount of sections without a delimiter
-	then initialize an array to contain our output with that number; \0 it.
-
-	two variables: last_split_index; selected_index
-	loop
-		both skip all delimiters in the beginning; selecting the first non-delimiter
-		selected_index moves until it finds a delimiter character
-		split off with input of last_split_index and selected_index
-		=> last_split_index gets written to array
-		last_split_index goes to selected_index
-*/
 
 static int	count_sections_without_delimiters(char const *s, char del)
 {

@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2023/10/13 08:19:01 by fschuber         ###   ########.fr       */
+/*   Updated: 2023/10/16 06:58:39 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int		ft_isdigit(int c);
 int		ft_isalnum(char c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
-int		ft_isprint(char c);
-char	ft_toupper(char letter);
-char	ft_tolower(char letter);
+int		ft_isprint(int c);
+int		ft_toupper(int letter);
+int		ft_tolower(int letter);
 
 // CHAR BOOL CONV
 int		ft_atoi(const char *str);

@@ -6,12 +6,11 @@
 #    By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 10:17:52 by fschuber          #+#    #+#              #
-#    Updated: 2023/10/13 09:09:51 by fschuber         ###   ########.fr        #
+#    Updated: 2023/10/16 07:21:34 by fschuber         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	libft.a
-BONUS_NAME	=	lstlibft.a
 
 SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 				ft_isdigit.c ft_isprint.c ft_itoa.c ft_substr.c ft_tolower.c ft_toupper.c \
@@ -23,20 +22,18 @@ SRCS		=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c 
 BONUS_SRCS	=	ft_lstadd_back.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c \
 				ft_lstadd_front.c ft_lstnew.c ft_lstsize.c \
 
-DEPS 		=	libft.h
-
-OBJS = $(SRCS:.c=.o)					# SRCS -> OBJS NAMING SCHEME
+OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-CC = gcc								# COMPILER
-CFLAGS = -Wall -Wextra -Werror -I.		# FLAGS
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(OBJS)						# LIB CREATION DEPENDS ON OBJS
+$(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-$(BONUS_NAME): $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 	ar rcs $(NAME) $(BONUS_OBJS)
 
-%.o: %.c $(DEPS)						# FOR EVERY OBJ THERES A SRC FILE
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -51,4 +48,4 @@ re: fclean all
 
 all: $(NAME)
 
-bonus: $(BONUS_NAME)
+.PHONY: all clean fclean re bonus
