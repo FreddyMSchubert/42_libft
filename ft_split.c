@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 	int			c_a_i;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	a = create_array(count_sections_without_delimiters(s, c));
 	if (!a)
 		return (NULL);
