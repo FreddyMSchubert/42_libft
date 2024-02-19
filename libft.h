@@ -6,7 +6,7 @@
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2023/11/30 15:51:15 by fschuber         ###   ########.fr       */
+/*   Updated: 2024/02/19 12:37:49 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 void	ft_free_rec(void **blob);
 void	ft_free_rec_rec(void ***blob);
+char	**ft_strarrdup(char **original);
 
 #endif
