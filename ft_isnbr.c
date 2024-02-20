@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_isnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 07:35:19 by fschuber          #+#    #+#             */
-/*   Updated: 2024/02/20 14:11:18 by fschuber         ###   ########.fr       */
+/*   Created: 2024/02/20 14:05:52 by fschuber          #+#    #+#             */
+/*   Updated: 2024/02/20 14:09:27 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd_back(t_list **lst, t_list *newelem)
+int	ft_isnbr(char *str)
 {
-	if (lst)
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
 	{
-		if (!*lst)
-			*lst = newelem;
-		else
-			ft_lstlast(*lst)->next = newelem;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
 	}
+	return (1);
 }
