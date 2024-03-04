@@ -6,7 +6,7 @@
 /*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:04:32 by fschuber          #+#    #+#             */
-/*   Updated: 2024/03/04 12:28:25 by freddy           ###   ########.fr       */
+/*   Updated: 2024/03/04 12:42:59 by freddy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isspace_str_any(char *str)
 {
 	while (*str)
 	{
-		if (!ft_isspace(*str))
+		if (ft_isspace(*str))
 			return (1);
 		str++;
 	}
@@ -31,6 +31,18 @@ int	ft_isspace_str_any(char *str)
 
 // checks if all chars in string are spaces
 int	ft_isspace_str_all(char *str)
+{
+	while (*str)
+	{
+		if (!ft_isspace(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
+
+// checks if none of the chars in string are spaces
+int	ft_isspace_str_none(char *str)
 {
 	while (*str)
 	{
