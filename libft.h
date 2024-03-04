@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
+/*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2024/02/20 14:10:49 by fschuber         ###   ########.fr       */
+/*   Updated: 2024/03/04 12:26:49 by freddy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,8 @@ void	ft_free_rec(void **blob);
 void	ft_free_rec_rec(void ***blob);
 char	**ft_strarrdup(char **original);
 int		ft_isnbr(char *str);
+int		ft_isspace_str_any(char *str);
+int		ft_isspace_str_all(char *str);
+int		ft_isspace(int c);
 
 #endif
