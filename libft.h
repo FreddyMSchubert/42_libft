@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fschuber <fschuber@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 09:50:33 by fschuber          #+#    #+#             */
-/*   Updated: 2024/03/04 12:43:17 by freddy           ###   ########.fr       */
+/*   Updated: 2024/03/18 08:23:03 by fschuber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int		ft_isspace_str_any(char *str);
 int		ft_isspace_str_all(char *str);
 int		ft_isspace(int c);
 int		ft_isspace_str_none(char *str);
+int		ft_lstlen(t_list *lst);
 
 #endif
